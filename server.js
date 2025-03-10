@@ -23,6 +23,11 @@ app.use(methodOverride("_method"));
 // Morgan for logging HTTP requests
 app.use(morgan('dev'));
 
+//mount routes
+app.get("/", (req, res) => {
+    res.render("index.ejs")
+})
+
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
 });
